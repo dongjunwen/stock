@@ -1,0 +1,80 @@
+program KCSTOR;
+
+uses
+  Forms,
+  Controls,
+  Dialogs,
+  SysUtils,
+  DateUtils,
+  windows,
+  UMain in 'UMain.pas' {FrmMain},
+  ULogin in 'ULogin.pas' {FrmLogin},
+  UDataCommon in 'UDataCommon.pas' {DataCommon: TDataModule},
+  UBaseForm in 'UBaseForm.pas' {FrmBase},
+  ULoginUser in 'ULoginUser.pas',
+  UBaseData in 'UBaseData.pas' {FrmData},
+  UMatInfo in 'UMatInfo.pas' {FrmMatInfo},
+  UCommonUtil in 'UCommonUtil.pas',
+  UCompBase in 'UCompBase.pas' {FrmCompBase},
+  UEmpBase in 'UEmpBase.pas' {FrmEmpBase},
+  UOrderForm in 'UOrderForm.pas' {FrmOrderForm},
+  UStorManage in 'UStorManage.pas' {FrmStorManage},
+  USaleForm in 'USaleForm.pas' {FrmSaleForm},
+  UStorOut in 'UStorOut.pas' {FrmStorOut},
+  UDataCfg in 'UDataCfg.pas' {FrmDataCfg},
+  UOrderReport in 'UOrderReport.pas' {FrmOrderReport},
+  USaleReport in 'USaleReport.pas' {FrmSaleReport},
+  USalerReport in 'USalerReport.pas' {FrmSalerReport},
+  UMatOrderReport in 'UMatOrderReport.pas' {FrmMatOrderReport},
+  UMatSaleReport in 'UMatSaleReport.pas' {FrmMatSaleRepot},
+  UStorInfo in 'UStorInfo.pas' {FrmStorInfo},
+  UAcctManage in 'UAcctManage.pas' {FrmAcctManage},
+  ULoginPassModi in 'ULoginPassModi.pas' {FrmPassModi},
+  UReginSoft in 'UReginSoft.pas' {FrmReginSoft},
+  UStorBatchOut in 'UStorBatchOut.pas' {FrmStorBatchOut};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  //Application.ShowMainForm := False;
+  Application.Title := '进销存管理系统';
+  {if Trunc(now-strtoDate('2015/01/04'))>=15 then
+  begin
+     Application.MessageBox('试用期已过!','警告信息!',MB_OK);
+     Application.Terminate;
+  end;
+
+  if Trunc(now-strtoDate('2015/01/03'))<=0 then
+  begin
+     Application.MessageBox('哈哈,这招也不灵!','警告信息!',MB_OK);
+     Application.Terminate;
+  end; 
+  }
+  Application.CreateForm(TDataCommon, DataCommon);
+  Application.CreateForm(TFrmMain, FrmMain);
+  // Application.CreateForm(TFrmLogin, FrmLogin);
+ // Application.CreateForm(TFrmMain, FrmMain);
+  if DataCommon.ConnectToServer then
+  begin
+      FrmMain.Visible:=false;
+      Application.CreateForm(TFrmLogin, FrmLogin);
+      FrmLogin.ShowModal;
+   // FrmLogin.Update;
+    {if FrmLogin.ModalResult=mrOk then
+    begin
+      Application.CreateForm(TFrmMain, FrmMain);
+      FrmMain.userInfo:=FrmLogin.userInfo;
+      FrmLogin.Hide;
+     // FrmLogin.Free;
+      FrmMain.Show;
+
+    end; }
+  end
+  else
+  begin
+    showmessage('数据库连接失败！');
+    Application.Terminate;
+  end;
+  Application.Run;
+end.
