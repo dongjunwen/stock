@@ -1,5 +1,5 @@
 object FrmBase: TFrmBase
-  Left = 304
+  Left = 0
   Top = 219
   AlphaBlend = True
   BorderStyle = bsNone

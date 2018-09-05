@@ -518,6 +518,12 @@ begin
           sql.Text:=format(delStorSql,[strOutNo]);
           execute; 
       end;
+       with QryTemp do
+      begin
+          close;
+          sql.Text:=format(delStorBatchSql,[strOutNo]);
+          execute; 
+      end;
 
 
 end;

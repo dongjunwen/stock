@@ -9,7 +9,7 @@ inherited FrmStorBatchOut: TFrmStorBatchOut
   PixelsPerInch = 96
   TextHeight = 13
   inherited PnlMain: TPanel
-    Height = 415
+    Height = 414
     object Panel1: TPanel
       Left = 1
       Top = 1
@@ -124,14 +124,14 @@ inherited FrmStorBatchOut: TFrmStorBatchOut
       Left = 1
       Top = 81
       Width = 1006
-      Height = 333
+      Height = 332
       Align = alClient
       TabOrder = 1
       object Panel4: TPanel
         Left = 1
         Top = 1
         Width = 1004
-        Height = 331
+        Height = 330
         Align = alClient
         Caption = 'Panel4'
         TabOrder = 0
@@ -139,7 +139,7 @@ inherited FrmStorBatchOut: TFrmStorBatchOut
           Left = 1
           Top = 1
           Width = 1002
-          Height = 329
+          Height = 328
           Align = alClient
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText

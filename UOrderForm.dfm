@@ -547,7 +547,7 @@ inherited FrmOrderForm: TFrmOrderForm
   inherited TblMain: TUniTable
     TableName = 'pur_order_base'
     MasterSource = dsQryMain
-    MasterFields = 'ORDER_NO'
+    MasterFields = 'order_no'
     DetailFields = 'ORDER_NO'
     OnNewRecord = TblMainNewRecord
     Left = 600
@@ -613,18 +613,12 @@ inherited FrmOrderForm: TFrmOrderForm
   end
   inherited TblDtl: TUniTable
     TableName = 'pur_order_dtl'
-    MasterFields = 'ORDER_NO'
+    MasterFields = 'order_no'
     DetailFields = 'ORDER_NO'
     BeforeDelete = TblDtlBeforeDelete
     OnNewRecord = TblDtlNewRecord
     Left = 688
     Top = 345
-    ParamData = <
-      item
-        DataType = ftString
-        Name = 'ORDER_NO'
-        ParamType = ptInput
-      end>
     object TblDtlORDER_NO: TStringField
       FieldName = 'ORDER_NO'
       Required = True

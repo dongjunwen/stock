@@ -231,9 +231,12 @@ procedure TFrmOrderForm.TblMainNewRecord(DataSet: TDataSet);
 var
   orderNo:String;
 begin
-  inherited;
+  inherited;  
    orderNo:=GetSeqId('p');
    TblMain.FieldByName('ORDER_NO').Value:=orderNo;
+   cxDBTextOrderNo.Text:=orderNo;
+  //  QryMain.Locate('ORDER_NO',orderNo,[loCaseInsensitive, loPartialKey]);
+
 end;
 
 procedure TFrmOrderForm.cxCmpSupCodePropertiesCloseUp(Sender: TObject);
@@ -316,7 +319,7 @@ begin
   StorInfo.StorNum:= StrToInt(VarToStr(cxGrid1DBTableView1.DataController.GetValue(rowNo,5)));
   StorInfo.MatType:=VarToStr(cxGrid1DBTableView1.DataController.GetValue(rowNo,10));
 
-  IF StorManageForm=nil then 
+  IF StorManageForm=nil then
   StorManageForm:=TFrmStorManage.create(self);
 
   StorManageForm.StorInfo:= StorInfo;
@@ -427,8 +430,11 @@ procedure TFrmOrderForm.btnSaveClick(Sender: TObject);
 var
   orderNo:String;
 begin
-  orderNo:=cxDBTextOrderNo.Text;
+  orderNo:=GetSeqId('p');
+   TblMain.FieldByName('ORDER_NO').Value:=orderNo;
+  //orderNo:=cxDBTextOrderNo.Text;
   inherited;
+  
   QryMain.Refresh;
   QryMain.Locate('ORDER_NO',orderNo,[]);
 end;

@@ -532,7 +532,9 @@ procedure TFrmSaleForm.btnSaveClick(Sender: TObject);
 var
 saleNo:String;
 begin
-  saleNo:=cxDBTextOrderNo.Text;
+ // saleNo:=cxDBTextOrderNo.Text;
+   saleNo:=GetSeqId('S');
+   TblMain.FieldByName('ORDER_NO').Value:=orderNo;
   inherited;
   QryMain.Refresh;
   QryMain.Locate('ORDER_NO',saleNo,[]);

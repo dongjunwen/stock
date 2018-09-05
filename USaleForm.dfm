@@ -583,9 +583,9 @@ inherited FrmSaleForm: TFrmSaleForm
   end
   inherited TblMain: TUniTable
     TableName = 'pur_sale_base'
+    MasterSource = dsQryMain
     MasterFields = 'ORDER_NO'
     DetailFields = 'ORDER_NO'
-    MasterSource = dsQryMain
     OnNewRecord = TblMainNewRecord
     Left = 264
     Top = 97

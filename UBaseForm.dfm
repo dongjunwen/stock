@@ -1,6 +1,6 @@
 object FrmBase: TFrmBase
-  Left = 0
-  Top = 219
+  Left = 588
+  Top = 222
   AlphaBlend = True
   BorderStyle = bsNone
   Caption = #22522#30784#30028#38754
