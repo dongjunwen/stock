@@ -1,6 +1,6 @@
 inherited FrmAcctManage: TFrmAcctManage
-  Left = 238
-  Top = 146
+  Left = 417
+  Top = 193
   Caption = #36134#21495#21450#26435#38480#31649#29702
   ClientWidth = 1104
   OldCreateOrder = True

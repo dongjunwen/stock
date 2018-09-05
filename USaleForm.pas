@@ -534,7 +534,7 @@ saleNo:String;
 begin
  // saleNo:=cxDBTextOrderNo.Text;
    saleNo:=GetSeqId('S');
-   TblMain.FieldByName('ORDER_NO').Value:=orderNo;
+   TblMain.FieldByName('ORDER_NO').Value:=saleNo;
   inherited;
   QryMain.Refresh;
   QryMain.Locate('ORDER_NO',saleNo,[]);
