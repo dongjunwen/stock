@@ -430,9 +430,12 @@ procedure TFrmOrderForm.btnSaveClick(Sender: TObject);
 var
   orderNo:String;
 begin
-  orderNo:=GetSeqId('p');
+   orderNo:=cxDBTextOrderNo.Text;
+   if (TblMain.State in [dsInsert]) then
+    begin
+      orderNo:=GetSeqId('p');
+    end;
    TblMain.FieldByName('ORDER_NO').Value:=orderNo;
-  //orderNo:=cxDBTextOrderNo.Text;
   inherited;
   
   QryMain.Refresh;

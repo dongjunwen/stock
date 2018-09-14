@@ -329,7 +329,7 @@ inherited FrmStorManage: TFrmStorManage
     Top = 265
   end
   inherited TblMain: TUniTable
-    TableName = 'KC_STOR_IN'
+    TableName = 'kc_stor_in'
     AfterPost = TblMainAfterPost
     BeforeDelete = TblMainBeforeDelete
     AfterDelete = TblMainAfterDelete

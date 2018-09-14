@@ -1,7 +1,8 @@
 inherited FrmStorManage: TFrmStorManage
   Left = 224
   Top = 126
-  Width = 1156
+  Width = 1351
+  Height = 668
   BorderStyle = bsSizeable
   Caption = 'S/N'#21644#25209#21495#31649#29702
   OldCreateOrder = True
@@ -9,11 +10,12 @@ inherited FrmStorManage: TFrmStorManage
   PixelsPerInch = 96
   TextHeight = 13
   inherited PnlMain: TPanel
-    Width = 1140
+    Width = 1335
+    Height = 596
     object Panel1: TPanel
       Left = 1
       Top = 1
-      Width = 1138
+      Width = 1333
       Height = 80
       Align = alTop
       TabOrder = 0
@@ -54,21 +56,21 @@ inherited FrmStorManage: TFrmStorManage
         Visible = False
       end
       object LablDegree: TLabel
-        Left = 501
+        Left = 701
         Top = 56
         Width = 27
         Height = 13
         Caption = #24230#25968':'
       end
       object LablSN: TLabel
-        Left = 80
+        Left = 71
         Top = 56
         Width = 30
         Height = 13
         Caption = 'SN'#21495':'
       end
       object LablValDate: TLabel
-        Left = 264
+        Left = 488
         Top = 56
         Width = 39
         Height = 13
@@ -111,7 +113,7 @@ inherited FrmStorManage: TFrmStorManage
         Width = 121
       end
       object cxTextDegree: TcxTextEdit
-        Left = 552
+        Left = 752
         Top = 51
         TabOrder = 5
         Width = 121
@@ -121,16 +123,16 @@ inherited FrmStorManage: TFrmStorManage
         Top = 51
         TabOrder = 6
         OnKeyPress = cxTextSNKeyPress
-        Width = 121
+        Width = 321
       end
       object cxDateVal: TcxDateEdit
-        Left = 320
+        Left = 552
         Top = 50
         TabOrder = 7
         Width = 121
       end
       object cxCheckBox1: TcxCheckBox
-        Left = 736
+        Left = 912
         Top = 48
         Caption = #40664#35748#24230#25968
         TabOrder = 8
@@ -138,7 +140,7 @@ inherited FrmStorManage: TFrmStorManage
         Width = 121
       end
       object cxCheckBox2: TcxCheckBox
-        Left = 864
+        Left = 1040
         Top = 48
         Caption = #40664#35748#26377#25928#26399
         TabOrder = 9
@@ -149,23 +151,23 @@ inherited FrmStorManage: TFrmStorManage
     object Panel2: TPanel
       Left = 1
       Top = 81
-      Width = 1138
-      Height = 327
+      Width = 1333
+      Height = 514
       Align = alClient
       TabOrder = 1
       object Panel4: TPanel
         Left = 1
         Top = 1
-        Width = 1136
-        Height = 325
+        Width = 1331
+        Height = 512
         Align = alClient
         Caption = 'Panel4'
         TabOrder = 0
         object cxGrid1: TcxGrid
           Left = 1
           Top = 1
-          Width = 1134
-          Height = 323
+          Width = 1329
+          Height = 510
           Align = alClient
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -262,9 +264,9 @@ inherited FrmStorManage: TFrmStorManage
     end
   end
   inherited pnltop: TPanel
-    Width = 1140
+    Width = 1335
     inherited tlb1: TToolBar
-      Width = 1138
+      Width = 1333
       Height = 32
       inherited btnserch: TToolButton
         Visible = False

@@ -532,8 +532,11 @@ procedure TFrmSaleForm.btnSaveClick(Sender: TObject);
 var
 saleNo:String;
 begin
- // saleNo:=cxDBTextOrderNo.Text;
-   saleNo:=GetSeqId('S');
+   saleNo:=cxDBTextOrderNo.Text;
+   if (TblMain.State in [dsInsert]) then
+    begin
+       saleNo:=GetSeqId('S');
+    end;
    TblMain.FieldByName('ORDER_NO').Value:=saleNo;
   inherited;
   QryMain.Refresh;
