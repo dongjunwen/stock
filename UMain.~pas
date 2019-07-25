@@ -92,7 +92,7 @@ implementation
 uses ULogin,  UBaseForm,UMatInfo, UCompBase, UEmpBase, UOrderForm,
   USaleForm, UDataCfg, UOrderReport, USaleReport, USalerReport,
   UMatOrderReport, UMatSaleReport, UStorInfo, UDataCommon, UAcctManage,
-  ULoginPassModi;
+  ULoginPassModi,UStorValid;
 
 //uses UAgreement;
 
@@ -191,7 +191,7 @@ begin
      //注册窗体类
   RegisterClasses([TFrmMatInfo,TFrmCompBase,TFrmEmpBase,TFrmOrderForm,TFrmSaleForm,
   TFrmOrderReport,TFrmSaleReport,TFrmSalerReport,TFrmMatOrderReport,TFrmMatSaleRepot,
-  TFrmStorInfo,TFrmAcctManage]);
+  TFrmStorInfo,TFrmAcctManage,TFrmStorValid]);
   tabList := TStringList.Create;
 
      //tvList:=TStringList.Create;
@@ -314,7 +314,7 @@ begin
     firstNode:=tvList.Items.AddChild(tvList.Items.GetFirstNode,'康畅进销存系统');
     firstNode.ImageIndex   :=   8;
     firstNode.SelectedIndex   :=   9;
-    firstNode.Text:='康畅进销存系统';
+    firstNode.Text:='进销存系统';
     nodeQuery:=TUniQuery.Create(self);
     nodeQuery.Connection:=DataCommon.FCommonQry.Connection;
 

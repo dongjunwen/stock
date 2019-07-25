@@ -92,7 +92,7 @@ implementation
 uses ULogin,  UBaseForm,UMatInfo, UCompBase, UEmpBase, UOrderForm,
   USaleForm, UDataCfg, UOrderReport, USaleReport, USalerReport,
   UMatOrderReport, UMatSaleReport, UStorInfo, UDataCommon, UAcctManage,
-  ULoginPassModi;
+  ULoginPassModi,UStorValid;
 
 //uses UAgreement;
 
@@ -191,7 +191,7 @@ begin
      //注册窗体类
   RegisterClasses([TFrmMatInfo,TFrmCompBase,TFrmEmpBase,TFrmOrderForm,TFrmSaleForm,
   TFrmOrderReport,TFrmSaleReport,TFrmSalerReport,TFrmMatOrderReport,TFrmMatSaleRepot,
-  TFrmStorInfo,TFrmAcctManage]);
+  TFrmStorInfo,TFrmAcctManage,TFrmStorValid]);
   tabList := TStringList.Create;
 
      //tvList:=TStringList.Create;
@@ -204,7 +204,7 @@ begin
     //销毁窗体类
   UnRegisterClasses([TFrmMatInfo,TFrmCompBase,TFrmEmpBase,TFrmOrderForm,TFrmSaleForm,
   TFrmOrderReport,TFrmSaleReport,TFrmSalerReport,TFrmMatOrderReport,TFrmMatSaleRepot,
-  TFrmStorInfo,TFrmAcctManage]);
+  TFrmStorInfo,TFrmAcctManage,TFrmStorValid]);
 end;
 
 procedure TFrmMain.FormClose(Sender: TObject; var Action: TCloseAction);

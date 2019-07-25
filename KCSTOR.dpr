@@ -31,7 +31,8 @@ uses
   UAcctManage in 'UAcctManage.pas' {FrmAcctManage},
   ULoginPassModi in 'ULoginPassModi.pas' {FrmPassModi},
   UReginSoft in 'UReginSoft.pas' {FrmReginSoft},
-  UStorBatchOut in 'UStorBatchOut.pas' {FrmStorBatchOut};
+  UStorBatchOut in 'UStorBatchOut.pas' {FrmStorBatchOut},
+  UStorValid in 'UStorValid.pas' {FrmStorValid};
 
 {$R *.res}
 

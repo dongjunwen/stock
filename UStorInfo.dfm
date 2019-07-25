@@ -1,6 +1,6 @@
 inherited FrmStorInfo: TFrmStorInfo
-  Left = 201
-  Top = 158
+  Left = 367
+  Top = 233
   Caption = #24211#23384#26597#35810
   ClientWidth = 1128
   OldCreateOrder = True
@@ -18,9 +18,9 @@ inherited FrmStorInfo: TFrmStorInfo
       object Label1: TLabel
         Left = 16
         Top = 16
-        Width = 28
+        Width = 24
         Height = 13
-        Caption = '*'#21697#21517
+        Caption = #21697#21517
       end
       object cxLookupMatCode: TcxLookupComboBox
         Left = 48
@@ -274,8 +274,7 @@ inherited FrmStorInfo: TFrmStorInfo
       item
         DataType = ftString
         Name = 'matCode'
-        ParamType = ptInputOutput
-        Value = 'jian.dao'
+        ParamType = ptInput
       end>
   end
 end

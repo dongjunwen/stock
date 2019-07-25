@@ -31,7 +31,8 @@ uses
   UAcctManage in 'UAcctManage.pas' {FrmAcctManage},
   ULoginPassModi in 'ULoginPassModi.pas' {FrmPassModi},
   UReginSoft in 'UReginSoft.pas' {FrmReginSoft},
-  UStorBatchOut in 'UStorBatchOut.pas' {FrmStorBatchOut};
+  UStorBatchOut in 'UStorBatchOut.pas' {FrmStorBatchOut},
+  UStorValid in 'UStorValid.pas' {FrmStorValid};
 
 {$R *.res}
 
@@ -53,6 +54,7 @@ begin
   }
   Application.CreateForm(TDataCommon, DataCommon);
   Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TFrmStorValid, FrmStorValid);
   // Application.CreateForm(TFrmLogin, FrmLogin);
  // Application.CreateForm(TFrmMain, FrmMain);
   if DataCommon.ConnectToServer then

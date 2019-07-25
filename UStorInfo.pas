@@ -11,7 +11,7 @@ uses
   cxGridCustomView, cxGrid, cxTextEdit, cxDropDownEdit, cxCalendar,
   cxContainer, cxMaskEdit, cxLookupEdit, cxDBLookupEdit,
   cxDBLookupComboBox, StdCtrls, UniProvider, MySQLUniProvider,UCommonUtil,
-  TeeProcs, TeEngine, Chart, DbChart, Series;
+  TeeProcs, TeEngine, Chart, DbChart, Series, cxSpinEdit;
 
 type
   TFrmStorInfo = class(TFrmBase)
@@ -74,15 +74,14 @@ var
    matCode:String;
 begin
   inherited;
-     matCode:='';
+   //≤È—Ø
+   QryStorInfo.Close;
     if cxLookupMatCode.Text<>'' then
     begin
        matCode:=cxLookupMatCode.Text;
-    end;
-     //≤È—Ø
-      QryStorInfo.Close;
-      QryStorInfo.ParamByName('matCode').Value:= matCode;
-      QryStorInfo.Execute;
+        QryStorInfo.ParamByName('matCode').Value:= matCode;
+    end;       
+   QryStorInfo.Execute;
 
 end;
 
