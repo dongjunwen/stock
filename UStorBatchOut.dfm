@@ -99,9 +99,10 @@ inherited FrmStorBatchOut: TFrmStorBatchOut
       object cxTextSN: TcxTextEdit
         Left = 120
         Top = 51
+        Properties.CharCase = ecUpperCase
         TabOrder = 5
         OnKeyPress = cxTextSNKeyPress
-        Width = 121
+        Width = 321
       end
       object cxCheckBox1: TcxCheckBox
         Left = 736

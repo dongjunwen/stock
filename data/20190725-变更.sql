@@ -91,7 +91,7 @@ BEGIN
 		SELECT `MAT_TYPE` INTO matType FROM `kc_matter_base` WHERE mat_code=matCode;
              
               
-	     INSERT INTO `kcdb`.`kc_stor_valid`
+	     INSERT INTO \`kc_stor_valid`
 		    (`MAT_CODE`,
 		     `MAT_NAME`,
 		     `MAT_GAUGE`,
@@ -111,7 +111,7 @@ BEGIN
 		     VALIDATE_DATE,
 		      BSN_NO,
 		      MEMO	 
-	      FROM `kcdb`.`kc_stor_in`
+	      FROM \`kc_stor_in`
 	       WHERE MAT_CODE=matCode
 	       GROUP BY mat_code,BSN_NO,degree; 
 	       

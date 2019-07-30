@@ -103,8 +103,8 @@ inherited FrmStorValid: TFrmStorValid
               DataController.Summary.FooterSummaryItems = <
                 item
                   Format = #24635#35745':0'
-                  Kind = skSum
-                  Column = cxGrid1DBTableView1Memo
+                  Kind = skCount
+                  Column = cxGrid1DBTableView1SelNo
                 end>
               DataController.Summary.SummaryGroups = <>
               OptionsView.Footer = True

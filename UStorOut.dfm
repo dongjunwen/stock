@@ -11,7 +11,7 @@ inherited FrmStorOut: TFrmStorOut
   TextHeight = 13
   inherited PnlMain: TPanel
     Width = 1102
-    Height = 415
+    Height = 414
     object Panel1: TPanel
       Left = 1
       Top = 1
@@ -101,9 +101,10 @@ inherited FrmStorOut: TFrmStorOut
       object cxTextSN: TcxTextEdit
         Left = 120
         Top = 51
+        Properties.CharCase = ecUpperCase
         TabOrder = 5
         OnKeyPress = cxTextSNKeyPress
-        Width = 121
+        Width = 321
       end
       object cxCheckBox1: TcxCheckBox
         Left = 736
@@ -126,14 +127,14 @@ inherited FrmStorOut: TFrmStorOut
       Left = 1
       Top = 81
       Width = 1100
-      Height = 333
+      Height = 332
       Align = alClient
       TabOrder = 1
       object Panel4: TPanel
         Left = 1
         Top = 1
         Width = 1098
-        Height = 331
+        Height = 330
         Align = alClient
         Caption = 'Panel4'
         TabOrder = 0
@@ -141,7 +142,7 @@ inherited FrmStorOut: TFrmStorOut
           Left = 1
           Top = 1
           Width = 1096
-          Height = 329
+          Height = 328
           Align = alClient
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
