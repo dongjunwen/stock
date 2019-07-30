@@ -56,7 +56,7 @@ inherited FrmStorManage: TFrmStorManage
         Visible = False
       end
       object LablDegree: TLabel
-        Left = 701
+        Left = 901
         Top = 56
         Width = 27
         Height = 13
@@ -70,7 +70,7 @@ inherited FrmStorManage: TFrmStorManage
         Caption = 'SN'#21495':'
       end
       object LablValDate: TLabel
-        Left = 488
+        Left = 688
         Top = 56
         Width = 39
         Height = 13
@@ -113,7 +113,7 @@ inherited FrmStorManage: TFrmStorManage
         Width = 121
       end
       object cxTextDegree: TcxTextEdit
-        Left = 752
+        Left = 952
         Top = 51
         TabOrder = 5
         Width = 121
@@ -121,18 +121,19 @@ inherited FrmStorManage: TFrmStorManage
       object cxTextSN: TcxTextEdit
         Left = 120
         Top = 51
+        Properties.CharCase = ecUpperCase
         TabOrder = 6
         OnKeyPress = cxTextSNKeyPress
-        Width = 321
+        Width = 553
       end
       object cxDateVal: TcxDateEdit
-        Left = 552
+        Left = 752
         Top = 50
         TabOrder = 7
         Width = 121
       end
       object cxCheckBox1: TcxCheckBox
-        Left = 912
+        Left = 1072
         Top = 48
         Caption = #40664#35748#24230#25968
         TabOrder = 8
@@ -140,7 +141,7 @@ inherited FrmStorManage: TFrmStorManage
         Width = 121
       end
       object cxCheckBox2: TcxCheckBox
-        Left = 1040
+        Left = 1200
         Top = 48
         Caption = #40664#35748#26377#25928#26399
         TabOrder = 9
@@ -323,8 +324,8 @@ inherited FrmStorManage: TFrmStorManage
     end
   end
   inherited ImageList: TImageList
-    Left = 1056
-    Top = 64
+    Left = 1216
+    Top = 56
   end
   inherited dsMain: TUniDataSource
     Left = 784

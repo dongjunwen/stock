@@ -1,0 +1,96 @@
+CREATE TABLE `sydb-20181213`.kc_stor_in LIKE  `sydb`.kc_stor_in;
+INSERT INTO `sydb-20181213`.kc_stor_in
+SELECT * FROM `sydb`.kc_stor_in WHERE stor_in_no IN (
+SELECT stor_in_no FROM `sydb`.`pur_order_dtl` WHERE order_no IN(
+SELECT order_no FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13'
+)
+) ;
+CREATE TABLE `sydb-20181213`.pur_order_dtl LIKE  `sydb`.pur_order_dtl;
+INSERT INTO `sydb-20181213`.pur_order_dtl
+SELECT * FROM `sydb`.`pur_order_dtl` WHERE order_no IN(
+SELECT order_no FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13'
+);
+
+CREATE TABLE `sydb-20181213`.pur_order_base LIKE  `sydb`.pur_order_base;
+INSERT INTO `sydb-20181213`.pur_order_base
+SELECT * FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13';
+
+
+
+
+CREATE TABLE `sydb-20181213`.kc_storbatch_out LIKE  `sydb`.kc_storbatch_out;
+INSERT INTO `sydb-20181213`.kc_storbatch_out
+SELECT *  FROM `sydb`.`kc_storbatch_out` WHERE stor_out_no IN 
+(
+SELECT  stor_out_no FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+)
+);
+
+CREATE TABLE `sydb-20181213`.kc_stor_out LIKE  `sydb`.kc_stor_out;
+INSERT INTO `sydb-20181213`.kc_stor_out
+SELECT *  FROM `sydb`.`kc_stor_out` WHERE stor_out_no IN 
+(
+SELECT  stor_out_no FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+)
+);
+
+CREATE TABLE `sydb-20181213`.pur_sale_dtl LIKE  `sydb`.pur_sale_dtl;
+INSERT INTO `sydb-20181213`.pur_sale_dtl
+SELECT  * FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+);
+
+CREATE TABLE `sydb-20181213`.pur_sale_base LIKE  `sydb`.pur_sale_base;
+INSERT INTO `sydb-20181213`.pur_sale_base
+SELECT * FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13';
+
+
+
+
+
+
+DELETE FROM `sydb`.kc_stor_in WHERE stor_in_no IN (
+SELECT stor_in_no FROM `sydb`.`pur_order_dtl` WHERE order_no IN(
+SELECT order_no FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13'
+)
+) ; 
+
+
+DELETE FROM `sydb`.`pur_order_dtl` WHERE order_no IN(
+SELECT order_no FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13'
+);
+
+DELETE FROM `sydb`.`pur_order_base` WHERE order_date <='2018-12-13';
+
+
+DELETE  FROM `sydb`.`kc_storbatch_out` WHERE stor_out_no IN 
+(
+SELECT  stor_out_no FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+)
+);
+
+DELETE  FROM `sydb`.`kc_stor_out` WHERE stor_out_no IN 
+(
+SELECT  stor_out_no FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+)
+);
+
+DELETE FROM `sydb`.`pur_sale_dtl`
+WHERE sale_no IN(
+SELECT sale_no FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13'
+);
+DELETE FROM `sydb`.`pur_sale_base` WHERE order_date <='2018-12-13';
+
+
+
+
+
