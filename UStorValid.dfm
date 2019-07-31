@@ -168,8 +168,24 @@ inherited FrmStorValid: TFrmStorValid
       inherited btnserch: TToolButton
         OnClick = btnserchClick
       end
+      inherited btnnew: TToolButton
+        Visible = False
+      end
+      inherited btndelete: TToolButton
+        Visible = False
+      end
+      inherited btnModi: TToolButton
+        Visible = False
+      end
+      inherited btnSave: TToolButton
+        Visible = False
+      end
+      inherited btncancel: TToolButton
+        Visible = False
+      end
       inherited btnfresh: TToolButton
         Wrap = False
+        Visible = False
       end
       inherited btnFirst: TToolButton
         Left = 539
@@ -190,6 +206,7 @@ inherited FrmStorValid: TFrmStorValid
       inherited btnImport: TToolButton
         Left = 847
         Top = 2
+        Visible = False
       end
       inherited btnExport: TToolButton
         Left = 924
@@ -198,8 +215,12 @@ inherited FrmStorValid: TFrmStorValid
       inherited btnprint: TToolButton
         Left = 1001
         Top = 2
+        Visible = False
       end
     end
+  end
+  inherited dlgSave1: TSaveDialog
+    Filter = '*.xls|*.xls'
   end
   object QryStorInfo: TUniQuery
     SQL.Strings = (

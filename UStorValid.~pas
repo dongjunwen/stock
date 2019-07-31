@@ -10,7 +10,7 @@ uses
   cxGridTableView, cxGridDBTableView, cxClasses, cxControls,
   cxGridCustomView, cxGrid, cxTextEdit, cxContainer, cxMaskEdit,
   cxDropDownEdit, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox,
-  StdCtrls, cxSpinEdit;
+  StdCtrls, cxSpinEdit,UCommonUtil;
 
 type
   TFrmStorValid = class(TFrmBase)
@@ -47,6 +47,7 @@ type
     procedure cxGrid1DBTableView1SelNoGetDataText(
       Sender: TcxCustomGridTableItem; ARecordIndex: Integer;
       var AText: String);
+    procedure btnExportClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -111,6 +112,18 @@ procedure TFrmStorValid.cxGrid1DBTableView1SelNoGetDataText(
 begin
     RecordCount := cxGrid1DBTableView1.ViewData.RecordCount;
     AText := Format('%.' + IntToStr(Length(IntToStr(RecordCount))) + 'd', [ARecordIndex + 1]);
+end;
+
+procedure TFrmStorValid.btnExportClick(Sender: TObject);
+var
+  fileName:String;
+begin
+  //inherited;
+  if not dlgSave1.Execute then
+      Exit;
+    fileName:=dlgSave1.FileName;
+    
+  ExportCxGrid(cxGrid1,fileName);
 end;
 
 end.
